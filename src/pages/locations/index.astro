@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout
@@ -103,7 +103,10 @@ import Layout from '../layouts/Layout.astro';
             <li>Installation d'adoucisseur anti-calcaire</li>
             <li>Dépannage fuite après compteur d'eau</li>
           </ul>
-          <a href="tel:+3269456070" class="btn-outline location-btn">Appeler à Kain</a>
+          <div class="location-actions">
+            <a href="tel:+3269456070" class="btn-primary location-btn">069 45 60 70</a>
+            <a href="/locations/kain" class="btn-outline location-btn">Page dédiée Kain</a>
+          </div>
         </div>
 
         <!-- Location 3 -->
@@ -123,7 +126,10 @@ import Layout from '../layouts/Layout.astro';
             <li>Débouchage express bacs à graisse</li>
             <li>Réparation fuite sous évier et robinetterie</li>
           </ul>
-          <a href="tel:+3269456070" class="btn-outline location-btn">Appeler à Froyennes</a>
+          <div class="location-actions">
+            <a href="tel:+3269456070" class="btn-primary location-btn">069 45 60 70</a>
+            <a href="/locations/froyennes" class="btn-outline location-btn">Page dédiée Froyennes</a>
+          </div>
         </div>
 
         <!-- Location 4 -->
@@ -143,7 +149,10 @@ import Layout from '../layouts/Layout.astro';
             <li>Inspection vidéo caméra étanche HD</li>
             <li>Pose de WC suspendus Geberit</li>
           </ul>
-          <a href="tel:+3269456070" class="btn-outline location-btn">Appeler à Templeuve</a>
+          <div class="location-actions">
+            <a href="tel:+3269456070" class="btn-primary location-btn">069 45 60 70</a>
+            <a href="/locations/templeuve" class="btn-outline location-btn">Page dédiée Templeuve</a>
+          </div>
         </div>
 
         <!-- Location 5 -->
@@ -163,7 +172,10 @@ import Layout from '../layouts/Layout.astro';
             <li>Réparation chasse d'eau et robinets fuyards</li>
             <li>Rapport technique pour sinistre dégât des eaux</li>
           </ul>
-          <a href="tel:+3269456070" class="btn-outline location-btn">Appeler à Blandain</a>
+          <div class="location-actions">
+            <a href="tel:+3269456070" class="btn-primary location-btn">069 45 60 70</a>
+            <a href="/locations/blandain" class="btn-outline location-btn">Page dédiée Blandain</a>
+          </div>
         </div>
 
         <!-- Location 6 -->
@@ -183,7 +195,10 @@ import Layout from '../layouts/Layout.astro';
             <li>Remplacement de boiler 150L à 200L</li>
             <li>Élimination des bruits de coup de bélier</li>
           </ul>
-          <a href="tel:+3269456070" class="btn-outline location-btn">Appeler à Gaurain</a>
+          <div class="location-actions">
+            <a href="tel:+3269456070" class="btn-primary location-btn">069 45 60 70</a>
+            <a href="/locations/gaurain-ramecroix" class="btn-outline location-btn">Page dédiée Gaurain</a>
+          </div>
         </div>
       </div>
     </div>
@@ -469,9 +484,18 @@ import Layout from '../layouts/Layout.astro';
     font-weight: bold;
   }
 
-  .location-btn {
+  .location-actions {
+    display: flex;
+    gap: 8px;
     width: 100%;
+  }
+
+  .location-actions .location-btn {
+    flex: 1;
     text-align: center;
+    padding: 10px 8px;
+    font-size: 13px;
+    white-space: nowrap;
   }
 
   /* All entities grid */
