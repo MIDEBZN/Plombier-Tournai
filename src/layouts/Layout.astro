@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import MobileCallBar from '../components/MobileCallBar.astro';
 import TrustAuthoritySection from '../components/TrustAuthoritySection.astro';
 import ContactFormSection from '../components/ContactFormSection.astro';
+import GoogleMapSection from '../components/GoogleMapSection.astro';
 import StickyCallButton from '../components/StickyCallButton.astro';
 import LiveChatWhatsApp from '../components/LiveChatWhatsApp.astro';
 import '../styles/global.css';
@@ -183,6 +184,9 @@ const jsonLd = {
   {currentPage !== 'contact' && <ContactFormSection />}
   
   <TrustAuthoritySection />
+  
+  <!-- Embedded Google Map -->
+  <GoogleMapSection />
   
   <Footer />
   

@@ -1,0 +1,261 @@
+---
+// GoogleMapSection.astro
+// Embedded Google Map showing Xtense Plombier Tournai at Rue du Général Piron 234, 7500 Tournai
+// Strict rule: Zero emojis, zero em dashes. Pure SVG vector icons.
+---
+
+<section class="google-map-section" aria-label="Localisation Google Maps de notre atelier">
+  <div class="container">
+    <div class="map-card-wrapper">
+      <div class="map-header">
+        <div class="badge-pill">
+          <span class="badge-dot-gold"></span>
+          <span>Atelier & Point de Départ des Équipes</span>
+        </div>
+        <h2 class="map-heading">Notre Localisation à Tournai</h2>
+        <p class="map-sub">
+          Basés Rue du Général Piron à Tournai, nos artisans plombiers interviennent rapidement dans toute la ville et les 29 entités avoisinantes.
+        </p>
+      </div>
+
+      <!-- Google Maps Iframe Container -->
+      <div class="map-iframe-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2727.4294986327063!2d3.387223676565637!3d50.59276587161971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86caa5ed0211a7e1%3A0x730399edc2ee9404!2sXtense%20Plombier%20Tournai!5e1!3m2!1sen!2sbe!4v1791588776780!5m2!1sen!2sbe"
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="Carte interactive Google Maps de Xtense Plombier Tournai"
+          class="google-map-iframe"
+        ></iframe>
+      </div>
+
+      <!-- Quick Location Info Footer -->
+      <div class="map-details-bar">
+        <div class="map-detail-item">
+          <div class="map-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="map-detail-text">
+            <strong>Adresse de l'atelier</strong>
+            <span>Rue du Général Piron 234, 7500 Tournai</span>
+          </div>
+        </div>
+
+        <div class="map-detail-item">
+          <div class="map-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="map-detail-text">
+            <strong>Disponibilité</strong>
+            <span>Dépannage d'urgence 24h/24 & 7j/7</span>
+          </div>
+        </div>
+
+        <div class="map-actions-group">
+          <a
+            href="https://maps.app.goo.gl/CFgP9LyR8tDeNwJe6"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline map-itineraire-btn"
+            aria-label="Ouvrir l'itinéraire sur Google Maps"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+            </svg>
+            <span>Itinéraire Google Maps</span>
+          </a>
+          <a
+            href="tel:0464780573"
+            class="btn-primary map-call-action-btn"
+            aria-label="Appeler l'atelier au 0464 78 05 73"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>0464 78 05 73</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .google-map-section {
+    padding: 56px 0;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border-hairline);
+  }
+
+  .map-card-wrapper {
+    background: #ffffff;
+    border: 1px solid var(--color-border-hairline);
+    border-radius: var(--radius-xl);
+    padding: 28px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .map-card-wrapper {
+      padding: 36px;
+    }
+  }
+
+  .map-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-surface-container-low);
+    border: 1px solid var(--color-outline-variant);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .badge-dot-gold {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-secondary-container);
+  }
+
+  .map-heading {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--color-on-surface);
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    .map-heading {
+      font-size: 32px;
+    }
+  }
+
+  .map-sub {
+    font-size: 15px;
+    color: var(--color-on-surface-variant);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .map-iframe-container {
+    width: 100%;
+    height: 420px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-border-hairline);
+    box-shadow: var(--shadow-sm);
+    background-color: var(--color-surface-container);
+  }
+
+  .google-map-iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .map-details-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--color-surface-container-low);
+    border: 1px solid var(--color-border-hairline);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+  }
+
+  @media (min-width: 768px) {
+    .map-details-bar {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .map-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .map-detail-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid var(--color-border-hairline);
+    color: var(--color-primary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .map-detail-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .map-detail-text strong {
+    font-size: 13px;
+    color: var(--color-on-surface);
+  }
+
+  .map-detail-text span {
+    font-size: 13px;
+    color: var(--color-on-surface-variant);
+  }
+
+  .map-actions-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .map-itineraire-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .map-call-action-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+</style>
