@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout
@@ -24,12 +24,13 @@ import Layout from '../layouts/Layout.astro';
   <!-- Navigation bar between services -->
   <div class="services-subnav-bar">
     <div class="container subnav-inner">
-      <a href="#recherche-fuite" class="subnav-link">Recherche de Fuite</a>
-      <a href="#debouchage" class="subnav-link">Débouchage & Caméra</a>
-      <a href="#boiler" class="subnav-link">Boiler & Chauffe-eau</a>
-      <a href="#adoucisseur" class="subnav-link">Anti-Calcaire SWDE</a>
-      <a href="#sanitaire" class="subnav-link">Sanitaire & Geberit</a>
-      <a href="#tarifs" class="subnav-link">Tarifs & Forfaits</a>
+      <a href="/services/depannage-urgence" class="subnav-link">Dépannage d'Urgence</a>
+      <a href="/services/debouchage" class="subnav-link">Débouchage</a>
+      <a href="/services/detection-de-fuites" class="subnav-link">Détection de Fuites</a>
+      <a href="/services/chauffage-chaudieres" class="subnav-link">Chauffage & Chaudières</a>
+      <a href="/services/installations-sanitaires" class="subnav-link">Installations Sanitaires</a>
+      <a href="/services/traitement-de-leau" class="subnav-link">Traitement de l'Eau</a>
+      <a href="#tarifs" class="subnav-link">Tarifs Indicatifs</a>
     </div>
   </div>
 
@@ -71,7 +72,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="action-row">
             <a href="tel:+3269456070" class="btn-primary">Urgence Fuite : 069 45 60 70</a>
-            <a href="/contact" class="btn-outline">Demander un diagnostic</a>
+            <a href="/services/detection-de-fuites" class="btn-outline">Guide détaillé & tarifs</a>
           </div>
         </div>
 
@@ -136,7 +137,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="action-row">
             <a href="tel:+3269456070" class="btn-primary">Appeler pour un Débouchage</a>
-            <a href="/contact" class="btn-outline">Forfait débouchage</a>
+            <a href="/services/debouchage" class="btn-outline">Guide détaillé & forfaits</a>
           </div>
         </div>
       </div>
@@ -169,7 +170,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="action-row">
             <a href="tel:+3269456070" class="btn-primary">Dépanner mon Boiler</a>
-            <a href="/contact" class="btn-outline">Devis remplacement boiler</a>
+            <a href="/services/chauffage-chaudieres" class="btn-outline">Guide détaillé & tarifs</a>
           </div>
         </div>
 
@@ -234,7 +235,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="action-row">
             <a href="/contact" class="btn-primary">Devis Adoucisseur Gratuit</a>
-            <a href="tel:+3269456070" class="btn-outline">Conseil technique</a>
+            <a href="/services/traitement-de-leau" class="btn-outline">Guide détaillé anti-calcaire</a>
           </div>
         </div>
       </div>
@@ -267,7 +268,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="action-row">
             <a href="/contact" class="btn-primary">Demander un Devis Sanitaire</a>
-            <a href="tel:+3269456070" class="btn-outline">Dépannage robinet</a>
+            <a href="/services/installations-sanitaires" class="btn-outline">Guide détaillé sanitaires</a>
           </div>
         </div>
 
@@ -284,6 +285,55 @@ import Layout from '../layouts/Layout.astro';
               <strong>Finitions Soignées</strong>
               <span>Garantie pièces & main d'oeuvre</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Dépannage d'Urgence 24/7 -->
+    <section id="urgence" class="section service-detail-section bg-alt">
+      <div class="container detail-grid reverse">
+        <div class="detail-media">
+          <div class="media-card">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6jn_OqOwo06vUqWkAAf20CzVG5-2S0PvlMUd_c0aevazJ8e28vuTqqRBd_kbODVEyUKiwLXK5-GCu29_Mbc8sfOcW7F3r9H1hsu8CH2NXy_7mHSNEM8uTC_VQvYhYfSCrP77BCP7wGsFMjvfjXdqGwKO0Wj3jKsmf_5cftpz9JzzIMNSdFmtVeUQcZ0Oa5xN6xJfbYrYI-uzkrHBXPUwMvZSHfXufNSHdknyOk39aZhdtmgB5qfcd"
+              alt="Camionnette d'intervention d'urgence plombier à Tournai disponible 24h sur 24"
+              class="media-img"
+              width="500"
+              height="400"
+            />
+            <div class="media-badge">
+              <strong>Arrivée en 30 Min</strong>
+              <span>Astreinte 24h/24 & 7j/7</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-text">
+          <div class="badge-pill">
+            <span>Astreinte Nuit & Week-End</span>
+          </div>
+          <h2>Dépannage de Plomberie d'Urgence à Tournai</h2>
+          <p class="lead-para">
+            Tuyau percé, inondation soudaine, chauffe-eau percé ou reflux d'égout ? Notre service d'astreinte est mobilisable immédiatement de jour comme de nuit sur les 29 entités du Grand Tournai.
+          </p>
+          <div class="tech-points">
+            <div class="tech-card">
+              <h4>Mise en Sécurité Immédiate</h4>
+              <p>Arrêt immédiat de l'inondation, pose de colliers de réparation et isolation de la zone sinistrée en moins de 30 minutes.</p>
+            </div>
+            <div class="tech-card">
+              <h4>Camionnettes 100% Outillées</h4>
+              <p>Plus de 300 raccords, vannes, siphons et pièces détachées en stock mobile pour une réparation définitive au premier passage.</p>
+            </div>
+            <div class="tech-card">
+              <h4>Tarification Annoncée Avant Déplacement</h4>
+              <p>Aucune mauvaise surprise tarifaire : le coût du forfait urgence vous est précisé en toute transparence par téléphone.</p>
+            </div>
+          </div>
+          <div class="action-row">
+            <a href="tel:+3269456070" class="btn-primary">Appel d'Urgence : 069 45 60 70</a>
+            <a href="/services/depannage-urgence" class="btn-outline">Guide détaillé dépannage d'urgence</a>
           </div>
         </div>
       </div>

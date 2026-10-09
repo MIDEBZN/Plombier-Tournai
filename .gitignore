@@ -25,3 +25,5 @@ pnpm-debug.log*
 .vercel/
 scratch/
 competitor_raw_data.json
+
+.vercel
