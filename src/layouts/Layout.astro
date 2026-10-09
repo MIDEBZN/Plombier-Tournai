@@ -1,0 +1,173 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileCallBar from '../components/MobileCallBar.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  currentPage?: string;
+  schemaType?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = '',
+  currentPage = 'home',
+  schemaType = 'Plumber'
+} = Astro.props;
+
+const siteUrl = 'https://plombier-tournai.be';
+const fullCanonical = `${siteUrl}${canonicalPath}`;
+
+// Structured Data JSON-LD
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Plumber", "EmergencyService"],
+      "@id": `${siteUrl}/#organization`,
+      "name": "Plombier Tournai",
+      "url": siteUrl,
+      "logo": `${siteUrl}/favicon.svg`,
+      "description": "Artisan plombier agréé à Tournai et Hainaut occidental. Dépannage d'urgence 24h/24, recherche de fuite non destructive, débouchage canalisation et installation de boiler.",
+      "telephone": "+32 69 45 60 70",
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Cash, Carte Bancaire, Virement, Bancontact",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rue Royale 42",
+        "addressLocality": "Tournai",
+        "postalCode": "7500",
+        "addressRegion": "Hainaut",
+        "addressCountry": "BE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.6056,
+        "longitude": 3.3878
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Tournai 7500" },
+        { "@type": "AdministrativeArea", "name": "Kain 7540" },
+        { "@type": "AdministrativeArea", "name": "Froyennes 7503" },
+        { "@type": "AdministrativeArea", "name": "Templeuve 7520" },
+        { "@type": "AdministrativeArea", "name": "Blandain 7522" },
+        { "@type": "AdministrativeArea", "name": "Gaurain-Ramecroix 7530" },
+        { "@type": "AdministrativeArea", "name": "Orcq 7501" },
+        { "@type": "AdministrativeArea", "name": "Rumillies 7540" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services de plomberie et dépannage",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Dépannage d'urgence plomberie Tournai 24/7"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Recherche de fuite d'eau non destructive avec rapport assurance"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Débouchage de canalisation et inspection vidéo caméra"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Détartrage et remplacement de boiler électrique"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pose d'adoucisseur d'eau contre le calcaire SWDE"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "Plombier Tournai",
+      "inLanguage": "fr-BE"
+    }
+  ]
+};
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={fullCanonical} />
+  
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={fullCanonical} />
+  <meta property="og:locale" content="fr_BE" />
+  <meta property="og:site_name" content="Plombier Tournai" />
+  
+  <!-- Geo Tags for Local Belgian SEO -->
+  <meta name="geo.region" content="BE-WHT" />
+  <meta name="geo.placename" content="Tournai" />
+  <meta name="geo.position" content="50.6056;3.3878" />
+  <meta name="ICBM" content="50.6056, 3.3878" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  
+  <!-- Preconnect to Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</head>
+<body>
+  <Header currentPage={currentPage} />
+  
+  <main>
+    <slot />
+  </main>
+  
+  <Footer />
+  
+  <MobileCallBar />
+</body>
+</html>

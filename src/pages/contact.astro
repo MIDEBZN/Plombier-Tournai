@@ -1,0 +1,471 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact & Devis Gratuit | Plombier Tournai - 069 45 60 70"
+  description="Contactez Plombier Tournai pour un dépannage express 24h/24 ou une demande de devis gratuit. Intervention en 30 min dans le Grand Tournai. Téléphone : 069 45 60 70."
+  canonicalPath="/contact"
+  currentPage="contact"
+>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="badge-pill">
+        <span>Permanence 24h/24 & 7j/7</span>
+      </div>
+      <h1 class="page-title">Contact & Devis Gratuit à Tournai</h1>
+      <p class="page-subtitle">
+        Une urgence ou un projet de rénovation sanitaire ? Remplissez notre formulaire pour une réponse sous 15 minutes, ou contactez directement notre technicien de garde.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Form & Info Grid -->
+  <section class="section">
+    <div class="container contact-main-grid">
+      <!-- Left: Contact Form -->
+      <div class="card form-card">
+        <div class="form-header">
+          <h2>Demande d'Intervention ou Devis</h2>
+          <p>Devis gratuit, sans engagement et conforme aux barèmes d'assurance.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="fullName" class="form-label">Nom et Prénom *</label>
+              <input type="text" id="fullName" name="fullName" required placeholder="Ex: Jean Dupont" class="form-input" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="form-label">Numéro de Téléphone *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="Ex: 0470 12 34 56" class="form-input" />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="commune" class="form-label">Commune d'Intervention *</label>
+              <select id="commune" name="commune" required class="form-select">
+                <option value="">Sélectionnez votre commune</option>
+                <option value="7500-tournai">Tournai Centre (7500)</option>
+                <option value="7540-kain">Kain (7540)</option>
+                <option value="7503-froyennes">Froyennes (7503)</option>
+                <option value="7520-templeuve">Templeuve (7520)</option>
+                <option value="7522-blandain">Blandain (7522)</option>
+                <option value="7530-gaurain">Gaurain-Ramecroix (7530)</option>
+                <option value="7540-rumillies">Rumillies (7540)</option>
+                <option value="7501-orcq">Orcq (7501)</option>
+                <option value="7520-ramegnies">Ramegnies-Chin (7520)</option>
+                <option value="7500-ere">Ere / Saint-Maur (7500)</option>
+                <option value="autre">Autre entité de Tournai</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="serviceType" class="form-label">Type d'Intervention *</label>
+              <select id="serviceType" name="serviceType" required class="form-select">
+                <option value="">Sélectionnez le problème</option>
+                <option value="fuite">Recherche de Fuite d'Eau</option>
+                <option value="debouchage">Débouchage WC ou Canalisation</option>
+                <option value="boiler">Panne de Boiler / Eau Chaude</option>
+                <option value="adoucisseur">Adoucisseur / Calcaire SWDE</option>
+                <option value="sanitaire">Rénovation Sanitaire & Tuyauterie</option>
+                <option value="autre">Autre Dépannage Plomberie</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="urgency" class="form-label">Degré d'Urgence *</label>
+            <div class="urgency-options">
+              <label class="radio-label">
+                <input type="radio" name="urgency" value="immediate" checked />
+                <span>Urgence immédiate (Arrivée sous 30 min)</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="urgency" value="today" />
+                <span>Dans la journée</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="urgency" value="quote" />
+                <span>Simple demande de devis</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Description du problème</label>
+            <textarea id="message" name="message" rows="4" placeholder="Précisez la pièce concernée, les symptômes constatés..." class="form-textarea"></textarea>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="btn-primary form-submit-btn">
+              <span>Envoyer la demande</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+            <div class="privacy-note">
+              <span>Vos données sont strictement confidentielles et ne seront jamais transmises à des tiers.</span>
+            </div>
+          </div>
+
+          <div id="formSuccess" class="form-success-alert" style="display: none;">
+            <strong>Demande bien reçue !</strong>
+            <span>Notre technicien de garde vous contacte dans les prochaines minutes. En cas d'urgence critique, privilégiez un appel direct au 069 45 60 70.</span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right: Direct Contact Cards -->
+      <div class="contact-sidebar">
+        <!-- Direct Call Box -->
+        <div class="card direct-contact-box highlight-border">
+          <div class="direct-icon-circle">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <h3>Ligne Directe Urgence 24/7</h3>
+          <p>Pour une fuite active ou un refoulement d'eaux, contactez directement l'artisan d'astreinte.</p>
+          <a href="tel:+3269456070" class="btn-primary sidebar-call-btn">
+            069 45 60 70
+          </a>
+          <span class="direct-sub">Disponible nuit, week-end & jours fériés</span>
+        </div>
+
+        <!-- WhatsApp Box -->
+        <div class="card direct-contact-box">
+          <div class="direct-icon-circle whatsapp-circle">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </div>
+          <h3>Photo WhatsApp Immédiate</h3>
+          <p>Envoyez une photo ou vidéo de votre fuite pour un pré-diagnostic instantané.</p>
+          <a href="https://wa.me/3269456070?text=Bonjour,%20j'ai%20une%20urgence%20plomberie%20à%20Tournai" class="btn-secondary sidebar-wa-btn">
+            Envoyer sur WhatsApp
+          </a>
+          <span class="direct-sub">Réponse moyenne en 5 minutes</span>
+        </div>
+
+        <!-- Coordonnées & Horaires -->
+        <div class="card info-box">
+          <h3>Nos Coordonnées</h3>
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <strong>Adresse de l'Atelier</strong>
+                <span>Rue Royale 42, 7500 Tournai, Belgique</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <strong>Horaires d'Intervention</strong>
+                <span>Urgences : 24h/24 & 7j/7</span>
+                <span>Bureaux & Devis : Lun - Sam (08h00 - 18h30)</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Courrier Électronique</strong>
+                <span>contact@plombier-tournai.be</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const alertBox = document.getElementById('formSuccess');
+
+  if (form && alertBox) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alertBox.style.display = 'block';
+      form.reset();
+      alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  }
+</script>
+
+<style>
+  .page-header {
+    background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-container-low) 100%);
+    padding: 56px 0 36px;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    margin-top: 14px;
+    margin-bottom: 12px;
+  }
+
+  @media (min-width: 768px) {
+    .page-title {
+      font-size: 46px;
+    }
+  }
+
+  .page-subtitle {
+    font-size: 17px;
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--color-on-surface-variant);
+  }
+
+  /* Main grid */
+  .contact-main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    .contact-main-grid {
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 48px;
+    }
+  }
+
+  /* Form */
+  .form-card {
+    padding: 36px;
+  }
+
+  .form-header {
+    margin-bottom: 28px;
+  }
+
+  .form-header h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .form-header p {
+    font-size: 15px;
+  }
+
+  .form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media (min-width: 640px) {
+    .form-row-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .urgency-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  @media (min-width: 640px) {
+    .urgency-options {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+  }
+
+  .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--color-on-surface);
+    cursor: pointer;
+  }
+
+  .form-submit-row {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  @media (min-width: 640px) {
+    .form-submit-row {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .form-submit-btn {
+    padding: 14px 28px;
+  }
+
+  .privacy-note {
+    font-size: 12px;
+    color: var(--color-outline);
+    max-width: 380px;
+    line-height: 1.4;
+  }
+
+  .form-success-alert {
+    margin-top: 24px;
+    padding: 18px;
+    background-color: var(--color-success-bg);
+    border: 1px solid #86efac;
+    border-radius: var(--radius-md);
+    color: #166534;
+  }
+
+  .form-success-alert strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .form-success-alert span {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Sidebar */
+  .contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .direct-contact-box {
+    text-align: center;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .highlight-border {
+    border: 2px solid var(--color-primary-container);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .direct-icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--color-secondary-container);
+    color: var(--color-on-tertiary-fixed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+
+  .whatsapp-circle {
+    background-color: #25d366;
+    color: #ffffff;
+  }
+
+  .direct-contact-box h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .direct-contact-box p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    max-width: 280px;
+  }
+
+  .sidebar-call-btn, .sidebar-wa-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .sidebar-wa-btn {
+    background-color: #25d366;
+    color: #ffffff;
+  }
+
+  .sidebar-wa-btn:hover {
+    background-color: #20ba59;
+  }
+
+  .direct-sub {
+    font-size: 12px;
+    color: var(--color-outline);
+    margin-top: 10px;
+  }
+
+  /* Info list */
+  .info-box {
+    padding: 28px;
+  }
+
+  .info-box h3 {
+    font-size: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--color-border-hairline);
+    padding-bottom: 10px;
+  }
+
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .info-icon {
+    color: var(--color-primary-container);
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .info-item strong {
+    display: block;
+    font-size: 14px;
+    color: var(--color-on-surface);
+  }
+
+  .info-item span {
+    display: block;
+    font-size: 13px;
+    color: var(--color-on-surface-variant);
+  }
+</style>
