@@ -1,0 +1,343 @@
+---
+// TrustAuthoritySection.astro
+// Displays all 5 core trust pillars across every page:
+// 1. Insurance info (Ethias, AXA, Belfius, AG, Baloise)
+// 2. Years in business (15+ years since 2011)
+// 3. Certifications (Cerga, Belgaqua, VCA, G1/G2, Qualiwall)
+// 4. Service guarantees (Garantie décennale 10 ans, 2 ans pièces & MO, devis ferme)
+// 5. Response time promises (Arrivée en 30 min chrono 24/7)
+---
+
+<section class="trust-authority-section" aria-label="Engagements et certifications officielles">
+  <div class="container">
+    <div class="section-title-wrap text-center">
+      <div class="badge-pill">
+        <span class="badge-dot-gold"></span>
+        <span>Confiance & Agréments Officiels</span>
+      </div>
+      <h2 class="trust-main-heading">Nos 5 Engagements d'Excellence pour Votre Tranquillité</h2>
+      <p class="trust-main-sub">
+        Un artisan tournaisien certifié, assuré et engagé sur la rapidité et la transparence tarifaire à chaque intervention.
+      </p>
+    </div>
+
+    <!-- 5 Pillars Grid -->
+    <div class="grid-5-pillars">
+      <!-- Pillar 1: Insurance Information -->
+      <div class="pillar-card">
+        <div class="pillar-icon-box">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="pillar-badge">Agréé Assurances</div>
+        <h3 class="pillar-title">Dossiers & Assurances Belges</h3>
+        <p class="pillar-desc">
+          Rapports techniques d'expertise photographique recevables pour la prise en charge à 100% par Ethias, AXA, Belfius, AG Insurance, Baloise et P&V. Assurance RC Professionnelle active.
+        </p>
+        <div class="pillar-highlight">
+          <span>Rapport certifié sous 24h</span>
+        </div>
+      </div>
+
+      <!-- Pillar 2: Years in Business -->
+      <div class="pillar-card">
+        <div class="pillar-icon-box">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <div class="pillar-badge">Depuis 2011</div>
+        <h3 class="pillar-title">15 Ans d'Expérience Locale</h3>
+        <p class="pillar-desc">
+          Plus d'une décennie et demie de savoir-faire artisanal à Tournai. Plus de 4 800 interventions réussies sur le Hainaut occidental avec un atelier physique au coeur de la ville.
+        </p>
+        <div class="pillar-highlight">
+          <span>4 800+ chantiers réalisés</span>
+        </div>
+      </div>
+
+      <!-- Pillar 3: All Certifications -->
+      <div class="pillar-card">
+        <div class="pillar-icon-box">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+        </div>
+        <div class="pillar-badge">Toutes Certifications</div>
+        <h3 class="pillar-title">Certifié Cerga, Belgaqua & VCA</h3>
+        <p class="pillar-desc">
+          Titulaires de l'ensemble des agréments officiels : Cerga Gaz naturel, Belgaqua eau potable, VCA sécurité des chantiers, habilitation gaz G1/G2 et conformité Qualiwall Région Wallonne.
+        </p>
+        <div class="pillar-highlight">
+          <span>Techniciens 100% habilités</span>
+        </div>
+      </div>
+
+      <!-- Pillar 4: Service Guarantees -->
+      <div class="pillar-card">
+        <div class="pillar-icon-box">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <div class="pillar-badge">Garantie Totale</div>
+        <h3 class="pillar-title">Garantie Décennale & Devis Fixe</h3>
+        <p class="pillar-desc">
+          Garantie décennale (10 ans) sur les tuyauteries et rénovations, garantie 2 ans pièces et main d'oeuvre. Devis écrit ferme signé avant travaux, sans frais cachés ni mauvaise surprise.
+        </p>
+        <div class="pillar-highlight">
+          <span>Prix fixé avant travaux</span>
+        </div>
+      </div>
+
+      <!-- Pillar 5: Response Time Promises -->
+      <div class="pillar-card highlight-card">
+        <div class="pillar-icon-box emergency-box">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+          </svg>
+        </div>
+        <div class="pillar-badge badge-emergency">Urgence 24h/24</div>
+        <h3 class="pillar-title">Arrivée en 30 Min Chrono</h3>
+        <p class="pillar-desc">
+          Engagement ferme : un dépanneur sur place en 30 minutes de jour comme de nuit, dimanches et fériés inclus. Couverture immédiate des 29 entités du Grand Tournai sans surtaxe de zone.
+        </p>
+        <div class="pillar-highlight highlight-emergency">
+          <span>30 minutes chrono garanties</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certification Badges Carousel/Strip -->
+    <div class="certifications-ribbon">
+      <div class="ribbon-label">Nos labels et attestations de conformité :</div>
+      <div class="ribbon-items">
+        <div class="cert-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Cerga Gaz Habilité</span>
+        </div>
+        <div class="cert-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Belgaqua Eau Potable</span>
+        </div>
+        <div class="cert-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>VCA Sécurité Chantier</span>
+        </div>
+        <div class="cert-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Agréé Région Wallonne G1/G2</span>
+        </div>
+        <div class="cert-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Norme SWDE Calcaire</span>
+        </div>
+        <div class="cert-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Garantie Décennale 10 Ans</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust-authority-section {
+    padding: 70px 0;
+    background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-container) 100%);
+    border-top: 1px solid var(--color-outline-variant);
+    border-bottom: 1px solid var(--color-outline-variant);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .badge-dot-gold {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #d97706;
+    display: inline-block;
+  }
+
+  .trust-main-heading {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 16px 0 10px;
+    letter-spacing: -0.5px;
+  }
+
+  .trust-main-sub {
+    font-size: 16px;
+    color: var(--color-outline);
+    max-width: 680px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+
+  .grid-5-pillars {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+  }
+
+  .pillar-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    position: relative;
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 43, 73, 0.08);
+  }
+
+  .highlight-card {
+    background: #ffffff;
+    border-color: rgba(177, 44, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(177, 44, 0, 0.06);
+  }
+
+  .pillar-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: var(--color-surface-container);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+
+  .emergency-box {
+    background: rgba(177, 44, 0, 0.08);
+    color: var(--color-tertiary);
+  }
+
+  .pillar-badge {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-secondary);
+    margin-bottom: 8px;
+  }
+
+  .badge-emergency {
+    color: var(--color-tertiary);
+  }
+
+  .pillar-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 0 0 10px;
+    line-height: 1.3;
+  }
+
+  .pillar-desc {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--color-outline);
+    margin-bottom: 16px;
+    flex-grow: 1;
+  }
+
+  .pillar-highlight {
+    background: var(--color-surface-container);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .highlight-emergency {
+    background: rgba(177, 44, 0, 0.08);
+    color: var(--color-tertiary);
+  }
+
+  /* Certifications Ribbon */
+  .certifications-ribbon {
+    margin-top: 36px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-full);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .ribbon-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .ribbon-items {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .cert-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--color-surface-container);
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .cert-pill svg {
+    color: var(--color-secondary);
+  }
+
+  @media (max-width: 1200px) {
+    .grid-5-pillars {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 800px) {
+    .grid-5-pillars {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .certifications-ribbon {
+      border-radius: var(--radius-lg);
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .grid-5-pillars {
+      grid-template-columns: 1fr;
+    }
+    .trust-main-heading {
+      font-size: 26px;
+    }
+  }
+</style>

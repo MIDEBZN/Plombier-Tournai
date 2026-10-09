@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileCallBar from '../components/MobileCallBar.astro';
+import TrustAuthoritySection from '../components/TrustAuthoritySection.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -38,6 +39,15 @@ const jsonLd = {
       "priceRange": "€€",
       "currenciesAccepted": "EUR",
       "paymentAccepted": "Cash, Carte Bancaire, Virement, Bancontact",
+      "foundingDate": "2011",
+      "award": [
+        "Cerga Habilité Gaz Naturel",
+        "Belgaqua Habilité Eau Potable",
+        "VCA Certifié Sécurité Chantier",
+        "Agréé Région Wallonne G1/G2",
+        "Garantie Décennale 10 Ans",
+        "Agréé Assurances Belges (Ethias, AXA, Belfius, AG, Baloise)"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rue Royale 42",
@@ -165,6 +175,8 @@ const jsonLd = {
   <main>
     <slot />
   </main>
+  
+  <TrustAuthoritySection />
   
   <Footer />
   
