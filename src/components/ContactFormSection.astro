@@ -1,0 +1,417 @@
+---
+// ContactFormSection.astro
+// Global contact form rendered on all pages
+// Uses FormSubmit: https://formsubmit.co/midebzn@gmail.com
+---
+
+<section class="global-contact-section" id="devis-rapide" aria-label="Formulaire de contact et devis">
+  <div class="container">
+    <div class="contact-box-wrapper">
+      <div class="contact-intro-col">
+        <div class="badge-pill">
+          <span class="badge-dot-green"></span>
+          <span>Devis Gratuit en 15 Minutes</span>
+        </div>
+        <h2 class="contact-heading">
+          Besoin d'un Dépannage ou d'un Devis à Tournai ?
+        </h2>
+        <p class="contact-sub">
+          Remplissez ce formulaire express pour recevoir une estimation transparente sous 15 minutes. En cas d'inondation ou d'urgence absolue, notre équipe de garde est joignable 24h/24 par téléphone.
+        </p>
+
+        <div class="contact-perks-list">
+          <div class="perk-item">
+            <div class="perk-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <strong>0 euro de frais de devis</strong>
+              <span>Étude gratuite et sans engagement</span>
+            </div>
+          </div>
+
+          <div class="perk-item">
+            <div class="perk-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div>
+              <strong>Réponse sous 15 minutes</strong>
+              <span>Prise en charge immédiate par un technicien</span>
+            </div>
+          </div>
+
+          <div class="perk-item">
+            <div class="perk-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div>
+              <strong>Agréé Assurances Belges</strong>
+              <span>Dossiers recevables Ethias, AXA, Belfius, AG</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="direct-phone-callout">
+          <span>Urgence absolue en cours ?</span>
+          <a href="tel:+3269456070" class="callout-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>069 45 60 70</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Form -->
+      <div class="contact-form-col">
+        <form
+          action="https://formsubmit.co/midebzn@gmail.com"
+          method="POST"
+          class="fast-quote-form"
+        >
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Nouvelle Demande d'Intervention - Plombier Tournai" />
+          <input type="hidden" name="_next" value="https://www.plombiertournai.be/contact?success=true" />
+          <input type="text" name="_honey" style="display:none" />
+
+          <div class="form-grid-2">
+            <div class="input-field-group">
+              <label for="g_name" class="field-label">Nom et Prénom *</label>
+              <input
+                type="text"
+                id="g_name"
+                name="nom_complet"
+                required
+                placeholder="Ex: Jean Dupont"
+                class="field-input"
+              />
+            </div>
+
+            <div class="input-field-group">
+              <label for="g_phone" class="field-label">Numéro de Téléphone *</label>
+              <input
+                type="tel"
+                id="g_phone"
+                name="telephone"
+                required
+                placeholder="Ex: 0470 12 34 56"
+                class="field-input"
+              />
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="input-field-group">
+              <label for="g_email" class="field-label">Adresse Email *</label>
+              <input
+                type="email"
+                id="g_email"
+                name="email"
+                required
+                placeholder="Ex: jean.dupont@email.be"
+                class="field-input"
+              />
+            </div>
+
+            <div class="input-field-group">
+              <label for="g_commune" class="field-label">Commune d'Intervention *</label>
+              <select id="g_commune" name="commune" required class="field-select">
+                <option value="">Sélectionnez votre localité</option>
+                <option value="Tournai Centre 7500">Tournai Centre (7500)</option>
+                <option value="Kain 7540">Kain (7540)</option>
+                <option value="Froyennes 7503">Froyennes (7503)</option>
+                <option value="Templeuve 7520">Templeuve (7520)</option>
+                <option value="Blandain 7522">Blandain (7522)</option>
+                <option value="Gaurain-Ramecroix 7530">Gaurain-Ramecroix (7530)</option>
+                <option value="Rumillies 7540">Rumillies (7540)</option>
+                <option value="Orcq 7501">Orcq (7501)</option>
+                <option value="Ramegnies-Chin 7520">Ramegnies-Chin (7520)</option>
+                <option value="Autre entité du Hainaut">Autre entité du Grand Tournai</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="input-field-group">
+            <label for="g_service" class="field-label">Type de Prestation Souhaitée *</label>
+            <select id="g_service" name="type_service" required class="field-select">
+              <option value="">Sélectionnez le motif</option>
+              <option value="Urgence - Fuite d'eau active">Dépannage d'Urgence (fuite d'eau, inondation)</option>
+              <option value="Débouchage WC / canalisation">Débouchage (WC, évier, égout, fosse septique)</option>
+              <option value="Recherche de fuite non destructive">Recherche de Fuite d'Eau sans casse (caméra, gaz traceur)</option>
+              <option value="Chauffage & boiler">Chauffage & Chaudière (boiler, détartrage, radiateur)</option>
+              <option value="Installations sanitaires">Installations Sanitaires (rénovation salle de bain, WC Geberit)</option>
+              <option value="Adoucisseur / calcaire SWDE">Traitement de l'Eau (adoucisseur calcaire SWDE)</option>
+              <option value="Autre demande">Autre prestation de plomberie</option>
+            </select>
+          </div>
+
+          <div class="input-field-group">
+            <label for="g_message" class="field-label">Description du Besoin</label>
+            <textarea
+              id="g_message"
+              name="description_probleme"
+              rows="3"
+              placeholder="Précisez les symptômes, la localisation de la fuite ou vos disponibilités..."
+              class="field-textarea"
+            ></textarea>
+          </div>
+
+          <div class="form-action-row">
+            <button type="submit" class="btn-primary submit-btn">
+              <span>Envoyer ma demande de devis</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+            <span class="secure-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              Transmission sécurisée et confidentielle
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .global-contact-section {
+    padding: 70px 0;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-outline-variant);
+  }
+
+  .contact-box-wrapper {
+    background: var(--color-surface-container);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-xl);
+    padding: 44px;
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 48px;
+    box-shadow: 0 10px 30px rgba(0, 43, 73, 0.04);
+  }
+
+  .badge-dot-green {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #16a34a;
+    display: inline-block;
+  }
+
+  .contact-heading {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--color-primary);
+    margin: 16px 0 12px;
+  }
+
+  .contact-sub {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-outline);
+    margin-bottom: 28px;
+  }
+
+  .contact-perks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .perk-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .perk-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-surface);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid var(--color-outline-variant);
+  }
+
+  .perk-item div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+  }
+
+  .perk-item strong {
+    font-size: 14px;
+    color: var(--color-primary);
+  }
+
+  .perk-item span {
+    font-size: 12px;
+    color: var(--color-outline);
+  }
+
+  .direct-phone-callout {
+    background: var(--color-primary);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .direct-phone-callout span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+  }
+
+  .callout-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-tertiary);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    font-weight: 800;
+    font-size: 15px;
+    text-decoration: none;
+    transition: transform var(--transition-fast);
+  }
+
+  .callout-link:hover {
+    transform: scale(1.03);
+  }
+
+  /* Form Styles */
+  .fast-quote-form {
+    background: var(--color-surface);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .input-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .field-input,
+  .field-select,
+  .field-textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    font-size: 14px;
+    transition: border-color var(--transition-fast);
+  }
+
+  .field-input:focus,
+  .field-select:focus,
+  .field-textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(0, 101, 143, 0.1);
+  }
+
+  .field-textarea {
+    resize: vertical;
+  }
+
+  .form-action-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 8px;
+  }
+
+  .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 15px;
+    padding: 13px 24px;
+  }
+
+  .secure-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--color-outline);
+  }
+
+  @media (max-width: 960px) {
+    .contact-box-wrapper {
+      grid-template-columns: 1fr;
+      padding: 28px;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .form-grid-2 {
+      grid-template-columns: 1fr;
+    }
+    .contact-heading {
+      font-size: 24px;
+    }
+    .fast-quote-form {
+      padding: 20px;
+    }
+    .form-action-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .submit-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

@@ -31,7 +31,17 @@ import Layout from '../layouts/Layout.astro';
           <p>Devis gratuit, sans engagement et conforme aux barèmes d'assurance.</p>
         </div>
 
-        <form class="contact-form" id="contactForm">
+        <form
+          class="contact-form"
+          id="contactForm"
+          action="https://formsubmit.co/midebzn@gmail.com"
+          method="POST"
+        >
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Nouvelle Demande depuis la Page Contact - Plombier Tournai" />
+          <input type="hidden" name="_next" value="https://www.plombiertournai.be/contact?success=true" />
+          <input type="text" name="_honey" style="display:none" />
           <div class="form-row-2">
             <div class="form-group">
               <label for="fullName" class="form-label">Nom et Prénom *</label>
@@ -206,12 +216,18 @@ import Layout from '../layouts/Layout.astro';
   const form = document.getElementById('contactForm');
   const alertBox = document.getElementById('formSuccess');
 
-  if (form && alertBox) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alertBox.style.display = 'block';
-      form.reset();
-      alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  if (window.location.search.includes('success=true') && alertBox) {
+    alertBox.style.display = 'block';
+    alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  if (form) {
+    form.addEventListener('submit', () => {
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) {
+        btn.setAttribute('disabled', 'true');
+        btn.textContent = 'Envoi en cours...';
+      }
     });
   }
 </script>
