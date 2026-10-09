@@ -1,0 +1,373 @@
+---
+// ReviewBadges.astro
+// High-authority review badges (Google 4.9/5, Trustpilot 4.8/5, Bati-Avis, Pages d'Or)
+// Strict rule: Zero emojis, zero em dashes. Pure SVG vector icons.
+---
+
+<section class="review-badges-section" aria-label="Avis et notes vérifiées">
+  <div class="container">
+    <div class="review-badges-wrapper">
+      <div class="review-badges-header">
+        <div class="badge-pill">
+          <span class="badge-dot-gold"></span>
+          <span>Transparence & Satisfaction Client</span>
+        </div>
+        <h3 class="review-badges-heading">Reconnu et Recommandé par Nos Clients dans le Grand Tournai</h3>
+        <p class="review-badges-sub">
+          Scores certifiés et avis indépendants collectés auprès des particuliers et syndics du Hainaut occidental.
+        </p>
+      </div>
+
+      <div class="badges-grid">
+        <!-- Badge 1: Google Reviews -->
+        <div class="badge-card google-card">
+          <div class="badge-card-top">
+            <div class="platform-logo" aria-label="Google Avis Clients">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+              </svg>
+            </div>
+            <div class="score-badge">
+              <span class="score-num">4.9</span>
+              <span class="score-max">/5</span>
+            </div>
+          </div>
+          <div class="stars-row" aria-label="5 étoiles">
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="badge-meta">
+            <strong class="badge-title">Google Customer Reviews</strong>
+            <span class="badge-count">184 avis clients vérifiés</span>
+          </div>
+          <div class="verified-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>Fiche Google vérifiée</span>
+          </div>
+        </div>
+
+        <!-- Badge 2: Trustpilot -->
+        <div class="badge-card trustpilot-card">
+          <div class="badge-card-top">
+            <div class="platform-logo" aria-label="Trustpilot">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#00B67A"/>
+                <path d="M14.6 9.8l-2.6-7.8v15.8l6.2 3.2-1.2-6.9 5-4.9-6.9-1-0.5 1.6z" fill="#005128" opacity="0.2"/>
+              </svg>
+            </div>
+            <div class="score-badge">
+              <span class="score-num">4.8</span>
+              <span class="score-max">/5</span>
+            </div>
+          </div>
+          <div class="trustpilot-rating-bar" aria-label="Note Excellent">
+            <div class="tp-star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div class="tp-star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div class="tp-star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div class="tp-star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div class="tp-star"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          </div>
+          <div class="badge-meta">
+            <strong class="badge-title">Trustpilot Score</strong>
+            <span class="badge-count">Mention Excellent (98%)</span>
+          </div>
+          <div class="verified-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>Certifié TrustScore</span>
+          </div>
+        </div>
+
+        <!-- Badge 3: Bati-Avis Belgique -->
+        <div class="badge-card bati-card">
+          <div class="badge-card-top">
+            <div class="platform-logo" aria-label="Bati-Avis">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0047AB" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <div class="score-badge">
+              <span class="score-num">99.2%</span>
+            </div>
+          </div>
+          <div class="stars-row" aria-label="Satisfaction maximale">
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="badge-meta">
+            <strong class="badge-title">Bati-Avis Artisans</strong>
+            <span class="badge-count">Taux de recommandation chantiers</span>
+          </div>
+          <div class="verified-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>Label Qualité Belgique</span>
+          </div>
+        </div>
+
+        <!-- Badge 4: Pages d'Or / Artisans Recommandés -->
+        <div class="badge-card pages-dor-card">
+          <div class="badge-card-top">
+            <div class="platform-logo" aria-label="Pages d'Or">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#705D00" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div class="score-badge">
+              <span class="score-num">5.0</span>
+              <span class="score-max">/5</span>
+            </div>
+          </div>
+          <div class="stars-row" aria-label="5 étoiles">
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="badge-meta">
+            <strong class="badge-title">Pages d'Or & 1307</strong>
+            <span class="badge-count">Artisan plomberie référencé Tournai</span>
+          </div>
+          <div class="verified-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>Artisan certifié local</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .review-badges-section {
+    padding: 36px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f4f8fd 100%);
+    border-top: 1px solid var(--color-border-hairline);
+    border-bottom: 1px solid var(--color-border-hairline);
+  }
+
+  .review-badges-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .review-badges-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-surface-container-low);
+    border: 1px solid var(--color-outline-variant);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .badge-dot-gold {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-secondary-container);
+    box-shadow: 0 0 0 2px rgba(252, 212, 0, 0.3);
+  }
+
+  .review-badges-heading {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--color-on-surface);
+  }
+
+  @media (min-width: 768px) {
+    .review-badges-heading {
+      font-size: 28px;
+    }
+  }
+
+  .review-badges-sub {
+    font-size: 15px;
+    color: var(--color-on-surface-variant);
+    line-height: 1.5;
+  }
+
+  .badges-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media (min-width: 640px) {
+    .badges-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .badges-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+  }
+
+  .badge-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border-hairline);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  }
+
+  .badge-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: #cbd9eb;
+  }
+
+  .badge-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .platform-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #f8fafd;
+    border: 1px solid var(--color-border-hairline);
+  }
+
+  .score-badge {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    background-color: var(--color-surface-container-low);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    border: 1px solid #d8e5f8;
+  }
+
+  .score-num {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color-on-surface);
+    font-family: var(--font-heading);
+  }
+
+  .score-max {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-on-surface-variant);
+  }
+
+  .stars-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .star-icon {
+    width: 18px;
+    height: 18px;
+    fill: #f59e0b;
+    stroke: #f59e0b;
+  }
+
+  .trustpilot-rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .tp-star {
+    width: 20px;
+    height: 20px;
+    background-color: #00b67a;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+  }
+
+  .tp-star svg {
+    width: 14px;
+    height: 14px;
+    fill: #ffffff;
+    stroke: none;
+  }
+
+  .badge-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .badge-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-on-surface);
+  }
+
+  .badge-count {
+    font-size: 13px;
+    color: var(--color-on-surface-variant);
+  }
+
+  .verified-tag {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px dashed var(--color-border-hairline);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-success);
+  }
+
+  .verified-tag svg {
+    flex-shrink: 0;
+  }
+</style>

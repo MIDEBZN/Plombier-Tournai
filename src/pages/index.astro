@@ -1,5 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ReviewBadges from '../components/ReviewBadges.astro';
+import ResponseTimeStats from '../components/ResponseTimeStats.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import ServiceAreaMap from '../components/ServiceAreaMap.astro';
+import CustomerTestimonials from '../components/CustomerTestimonials.astro';
 ---
 
 <Layout
@@ -103,6 +108,12 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <!-- Review Badges (Google 4.9/5, Trustpilot 4.8/5, Bati-Avis, Pages d'Or) -->
+  <ReviewBadges />
+
+  <!-- Response Time Stats (30 min, 98.4%, 4850+ interventions, 15 ans) -->
+  <ResponseTimeStats />
 
   <!-- 2. REASSURANCE STRIP -->
   <section class="strip-section">
@@ -373,156 +384,14 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- 5. LOCAL COVERAGE SUMMARY -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title-wrap">
-        <div class="badge-pill">
-          <span>Proximité Immédiate</span>
-        </div>
-        <h2>Notre Rayon d'Intervention : Tournai & ses 29 Entités</h2>
-        <p>
-          Positionnés stratégiquement dans l'agglomération tournaisienne, nous garantissons un délai de route inférieur à 20-30 minutes sur l'ensemble des communes suivantes :
-        </p>
-      </div>
+  <!-- Trust Badges & Regulatory Labels (Cerga, Belgaqua, VCA, Garantie Décennale 10 Ans, G1/G2, Assurances) -->
+  <TrustBadges />
 
-      <div class="zones-pills-grid">
-        <div class="zone-pill-item">
-          <strong>Tournai Centre</strong>
-          <span>Code postal 7500</span>
-        </div>
-        <div class="zone-pill-item">
-          <strong>Kain</strong>
-          <span>Code postal 7540</span>
-        </div>
-        <div class="zone-pill-item">
-          <strong>Froyennes</strong>
-          <span>Code postal 7503</span>
-        </div>
-        <div class="zone-pill-item">
-          <strong>Templeuve</strong>
-          <span>Code postal 7520</span>
-        </div>
-        <div class="zone-pill-item">
-          <strong>Blandain</strong>
-          <span>Code postal 7522</span>
-        </div>
-        <div class="zone-pill-item">
-          <strong>Gaurain-Ramecroix</strong>
-          <span>Code postal 7530</span>
-        </div>
-        <div class="zone-pill-item">
-          <strong>Rumillies</strong>
-          <span>Code postal 7540</span>
-        </div>
-        <div class="zone-pill-item">
-          <strong>Orcq</strong>
-          <span>Code postal 7501</span>
-        </div>
-        <div class="zone-pill-item">
-          <strong>Ere & Saint-Maur</strong>
-          <span>Code postal 7500</span>
-        </div>
-        <div class="zone-pill-item">
-          <strong>Ramegnies-Chin</strong>
-          <span>Code postal 7520</span>
-        </div>
-        <div class="zone-pill-item">
-          <strong>Chercq & Vaulx</strong>
-          <span>Code postal 7521</span>
-        </div>
-        <div class="zone-pill-item">
-          <strong>Mont-Saint-Aubert</strong>
-          <span>Code postal 7542</span>
-        </div>
-      </div>
+  <!-- Service Area Map (Grand Tournai & 29 Entités, Visual SVG Map & Commune Selector) -->
+  <ServiceAreaMap />
 
-      <div class="zones-link-wrap">
-        <a href="/locations" class="btn-secondary">
-          <span>Découvrir toutes les communes couvertes</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. VERIFIED REVIEWS -->
-  <section class="section reviews-section">
-    <div class="container">
-      <div class="section-title-wrap">
-        <div class="badge-pill">
-          <span>Avis Clients Vérifiés</span>
-        </div>
-        <h2>Ils Témoignent de Notre Réactivité</h2>
-        <p>Retours d'expérience authentiques d'habitants de Tournai et de la région picarde.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card review-card">
-          <div class="review-stars" aria-label="5 étoiles sur 5">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          </div>
-          <p class="review-quote">
-            "Tuyau percé un dimanche matin sous notre évier de cuisine avec de l'eau partout. Le plombier est arrivé de Kain en 25 minutes chrono. Réparation propre au cuivre et tarif conforme au devis annoncé par téléphone."
-          </p>
-          <div class="review-author">
-            <div class="author-avatar">MD</div>
-            <div>
-              <strong>Marc D.</strong>
-              <span>Tournai (Quartier Saint-Piat)</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card review-card">
-          <div class="review-stars" aria-label="5 étoiles sur 5">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          </div>
-          <p class="review-quote">
-            "Facture d'eau SWDE anormale. Plombier Tournai a déployé la caméra thermique et a repéré une fuite enterrée sous la dalle sans rien casser au hasard. Leur rapport officiel a été accepté sans discussion par Ethias."
-          </p>
-          <div class="review-author">
-            <div class="author-avatar">SV</div>
-            <div>
-              <strong>Sophie V.</strong>
-              <span>Froyennes</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card review-card">
-          <div class="review-stars" aria-label="5 étoiles sur 5">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          </div>
-          <p class="review-quote">
-            "Notre ancien boiler était complètement colmaté par le calcaire. Remplacement fait le lendemain par un modèle économique. Travail très soigné, chantier laissé impeccable. Je recommande les yeux fermés."
-          </p>
-          <div class="review-author">
-            <div class="author-avatar">JL</div>
-            <div>
-              <strong>Jean-Luc M.</strong>
-              <span>Templeuve</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Customer Testimonials (Verified Reviews & Aggregate Ratings) -->
+  <CustomerTestimonials />
 
   <!-- 7. LOCAL FAQ -->
   <section class="section">
