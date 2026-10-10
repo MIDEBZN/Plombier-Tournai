@@ -27,26 +27,54 @@ const {
   preloadImage
 } = Astro.props;
 
-const siteUrl = 'https://plombier-tournai.be';
-const fullCanonical = `${siteUrl}${canonicalPath}`;
+const siteUrl = 'https://www.plombiertournai.be';
+const rawCanonical = canonicalPath || '';
+const cleanCanonicalPath = rawCanonical === '/' ? '' : (rawCanonical.startsWith('/') ? rawCanonical : `/${rawCanonical}`);
+const fullCanonical = `${siteUrl}${cleanCanonicalPath}`;
 
 // Structured Data JSON-LD
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Plumber", "EmergencyService"],
+      "@type": ["Plumber", "EmergencyService", "HomeAndConstructionBusiness"],
       "@id": `${siteUrl}/#organization`,
       "name": "Plombier Tournai",
+      "legalName": "Plombier Tournai - Artisan Agréé",
       "url": siteUrl,
       "logo": `${siteUrl}/logo.png`,
-      "description": "Artisan plombier agréé à Tournai et Hainaut occidental. Dépannage d'urgence 24h/24, recherche de fuite non destructive, débouchage canalisation et installation de boiler.",
+      "image": `${siteUrl}/images/hero-real-sink.webp`,
+      "description": "Artisan plombier agréé à Tournai et dans le Hainaut occidental. Dépannage plomberie d'urgence 24h/24 en 30 min, recherche de fuite d'eau non destructive, débouchage haute pression et installation sanitaire.",
       "telephone": "+32 464 78 05 73",
       "email": "contact@plombiertournai.be",
       "priceRange": "€€",
       "currenciesAccepted": "EUR",
       "paymentAccepted": "Cash, Carte Bancaire, Virement, Bancontact",
       "foundingDate": "2011",
+      "hasMap": "https://maps.app.goo.gl/CFgP9LyR8tDeNwJe6",
+      "sameAs": [
+        "https://maps.app.goo.gl/CFgP9LyR8tDeNwJe6"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+32 464 78 05 73",
+        "contactType": "emergency service",
+        "areaServed": "BE",
+        "availableLanguage": ["fr", "nl", "en"],
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "award": [
         "Cerga Habilité Gaz Naturel",
         "Belgaqua Habilité Eau Potable",
@@ -65,8 +93,8 @@ const jsonLd = {
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 50.6056,
-        "longitude": 3.3878
+        "latitude": 50.592766,
+        "longitude": 3.387224
       },
       "openingHoursSpecification": [
         {
@@ -84,45 +112,72 @@ const jsonLd = {
         { "@type": "AdministrativeArea", "name": "Blandain 7522" },
         { "@type": "AdministrativeArea", "name": "Gaurain-Ramecroix 7530" },
         { "@type": "AdministrativeArea", "name": "Orcq 7501" },
-        { "@type": "AdministrativeArea", "name": "Rumillies 7540" }
+        { "@type": "AdministrativeArea", "name": "Rumillies 7540" },
+        { "@type": "AdministrativeArea", "name": "Hertain 7522" },
+        { "@type": "AdministrativeArea", "name": "Ramegnies-Chin 7520" }
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Services de plomberie et dépannage",
+        "name": "Catalogue des Services de Plomberie et Dépannage Tournai",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Dépannage d'urgence plomberie Tournai 24/7"
+              "name": "Dépannage Plomberie d'Urgence 24/7",
+              "description": "Intervention express en 30 minutes à Tournai pour fuite d'eau, canalisation rompue ou coupure d'eau d'urgence.",
+              "serviceType": "Emergency Plumbing",
+              "provider": { "@id": `${siteUrl}/#organization` }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Recherche de fuite d'eau non destructive avec rapport assurance"
+              "name": "Recherche et Détection de Fuite Non Destructive",
+              "description": "Localisation thermique, acoustique et gaz traceur sans démolition avec rapport officiel agréé assurances belges.",
+              "serviceType": "Leak Detection",
+              "provider": { "@id": `${siteUrl}/#organization` }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Débouchage de canalisation et inspection vidéo caméra"
+              "name": "Débouchage Haute Pression de Canalisations",
+              "description": "Débouchage express et curage haute pression 180 bars d'éviers, WC, colonnes et réseau d'égouttage avec inspection caméra.",
+              "serviceType": "Drain Cleaning",
+              "provider": { "@id": `${siteUrl}/#organization` }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Détartrage et remplacement de boiler électrique"
+              "name": "Entretien, Réparation et Remplacement de Boiler & Chaudière",
+              "description": "Dépannage de chauffe-eau électrique et chaudières gaz/mazout, détartrage et remplacement rapide par technicien agréé Cerga.",
+              "serviceType": "Water Heater Repair",
+              "provider": { "@id": `${siteUrl}/#organization` }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Pose d'adoucisseur d'eau contre le calcaire SWDE"
+              "name": "Installation et Entretien d'Adoucisseur d'Eau Anti-Calcaire",
+              "description": "Pose d'adoucisseurs d'eau adaptés à la dureté extrême SWDE de Tournai (38°fH) pour protéger canalisations et équipements.",
+              "serviceType": "Water Softener Installation",
+              "provider": { "@id": `${siteUrl}/#organization` }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Installations Sanitaires & Rénovation Salle de Bain",
+              "description": "Pose de sanitaires, WC suspendus Geberit, douches italiennes, tuyauterie cuivre/multicouche conforme aux normes Belgaqua.",
+              "serviceType": "Sanitary Installation",
+              "provider": { "@id": `${siteUrl}/#organization` }
             }
           }
         ]
