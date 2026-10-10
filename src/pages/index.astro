@@ -12,6 +12,7 @@ import CustomerTestimonials from '../components/CustomerTestimonials.astro';
   description="Artisan plombier agréé à Tournai (7500). Dépannage d'urgence 24h/24 en 30 min : fuite d'eau, débouchage canalisation, réparation boiler. Agréé assurances belges. Devis 100% gratuit."
   canonicalPath="/"
   currentPage="home"
+  preloadImage="/images/hero-real-sink.webp"
 >
   <!-- 1. HERO SECTION -->
   <section class="hero-section">
@@ -80,11 +81,14 @@ import CustomerTestimonials from '../components/CustomerTestimonials.astro';
       <div class="hero-visual">
         <div class="hero-image-wrapper">
           <img
-            src="/images/hero-real-sink.jpg"
+            src="/images/hero-real-sink.webp"
             alt="Artisan plombier intervenant sur une canalisation d'évacuation sous évier à Tournai"
             width="600"
             height="500"
             class="hero-img"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
           />
           <div class="hero-floating-card">
             <div class="floating-icon">
