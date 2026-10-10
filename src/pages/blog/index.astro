@@ -1,0 +1,239 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ReviewBadges from '../../components/ReviewBadges.astro';
+
+const rawPosts = import.meta.glob('../../content/blog/*.md', { eager: true });
+const posts = Object.entries(rawPosts).map(([filepath, post]: [string, any]) => {
+  const fileSlug = filepath.split('/').pop()?.replace('.md', '');
+  return {
+    ...post,
+    slug: post.frontmatter?.slug || fileSlug,
+  };
+});
+posts.sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title));
+
+const categories = ["Tous", "Dépannage & Urgence", "Tarifs & Devis", "Chauffage & Chaudières", "Sanitaire & Travaux", "Réglementation & Aides", "Guide & Conseils"];
+---
+
+<Layout
+  title="Blog Plomberie Tournai : Guides, Tarifs & Conseils d'Experts"
+  description="Consultez nos 30 guides et articles d'experts sur la plomberie à Tournai : tarifs, urgence 24h/24, débouchage, fuites, chaudières et normes belges."
+  canonicalPath="/blog"
+  currentPage="blog"
+>
+  <section class="page-header">
+    <div class="container">
+      <div class="badge-pill">
+        <span>Conseils & Guides Pratiques</span>
+      </div>
+      <h1 class="page-title">Blog & Guides Plomberie à Tournai</h1>
+      <p class="page-subtitle">
+        Retrouvez les conseils de nos artisans certifiés pour comprendre vos installations, anticiper vos coûts, réagir en cas d'urgence et réussir vos travaux dans le Tournaisis.
+      </p>
+    </div>
+  </section>
+
+  <ReviewBadges />
+
+  <section class="blog-catalog-section">
+    <div class="container">
+      <div class="blog-intro-bar">
+        <p class="results-count"><strong>{posts.length} articles et guides d'experts</strong> disponibles pour les propriétaires et locataires de Tournai et sa région.</p>
+      </div>
+
+      <div class="articles-grid">
+        {posts.map((post) => (
+          <article class="article-card">
+            <div class="card-meta">
+              <span class="category-badge">{post.frontmatter.category || "Guide"}</span>
+              <span class="reading-time">Lecture : ~7 min</span>
+            </div>
+            <h2 class="card-title">
+              <a href={`/blog/${post.slug}`}>{post.frontmatter.title}</a>
+            </h2>
+            <p class="card-desc">{post.frontmatter.description}</p>
+            <div class="card-footer">
+              <a href={`/blog/${post.slug}`} class="read-more-link">
+                Lire le guide complet &rarr;
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="emergency-cta-strip">
+    <div class="container cta-content">
+      <h2>Une urgence plomberie immédiate à Tournai ?</h2>
+      <p>Nos artisans d'astreinte interviennent 24h/24 et 7j/7 en moins de 30 minutes sur Tournai et toutes les entités voisines.</p>
+      <div class="cta-actions">
+        <a href="tel:0464780573" class="btn btn-primary">Appeler le 0464 78 05 73</a>
+        <a href="/contact" class="btn btn-outline">Demander une intervention</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #0a306e 0%, #061c40 100%);
+    color: #ffffff;
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+  .badge-pill {
+    display: inline-block;
+    background: rgba(255, 214, 0, 0.15);
+    color: #ffd600;
+    border: 1px solid rgba(255, 214, 0, 0.4);
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .page-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+  .page-subtitle {
+    font-size: 1.15rem;
+    max-width: 750px;
+    margin: 0 auto;
+    color: #d1d5db;
+    line-height: 1.6;
+  }
+  .blog-catalog-section {
+    padding: 60px 0;
+    background-color: #f8fafc;
+  }
+  .blog-intro-bar {
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .results-count {
+    color: #475569;
+    font-size: 1.05rem;
+  }
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
+  }
+  .article-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+  }
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .category-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  .reading-time {
+    font-size: 0.8rem;
+    color: #94a3b8;
+  }
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .card-title a {
+    color: #0f172a;
+    text-decoration: none;
+  }
+  .card-title a:hover {
+    color: #0a306e;
+  }
+  .card-desc {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+  .read-more-link {
+    color: #0a306e;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+  }
+  .read-more-link:hover {
+    text-decoration: underline;
+  }
+  .emergency-cta-strip {
+    background: #0a306e;
+    color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+  }
+  .emergency-cta-strip h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  .emergency-cta-strip p {
+    color: #cbd5e1;
+    max-width: 650px;
+    margin: 0 auto 24px;
+    font-size: 1.1rem;
+  }
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary {
+    background: #ffd600;
+    color: #0a306e;
+  }
+  .btn-primary:hover {
+    background: #e6c200;
+  }
+  .btn-outline {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+  }
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+</style>

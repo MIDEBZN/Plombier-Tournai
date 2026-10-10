@@ -57,6 +57,7 @@ const { currentPage = 'home' } = Astro.props;
       <a href="/" class:list={['nav-link', { active: currentPage === 'home' }]}>Accueil</a>
       <a href="/services" class:list={['nav-link', { active: currentPage === 'services' }]}>Nos Services</a>
       <a href="/locations" class:list={['nav-link', { active: currentPage === 'locations' }]}>Zones d'Intervention</a>
+      <a href="/blog" class:list={['nav-link', { active: currentPage === 'blog' }]}>Blog & Guides</a>
       <a href="/about" class:list={['nav-link', { active: currentPage === 'about' }]}>A Propos</a>
       <a href="/contact" class:list={['nav-link', { active: currentPage === 'contact' }]}>Devis & Contact</a>
     </nav>
@@ -87,6 +88,7 @@ const { currentPage = 'home' } = Astro.props;
       <a href="/" class:list={['mobile-nav-link', { active: currentPage === 'home' }]}>Accueil</a>
       <a href="/services" class:list={['mobile-nav-link', { active: currentPage === 'services' }]}>Nos Services</a>
       <a href="/locations" class:list={['mobile-nav-link', { active: currentPage === 'locations' }]}>Zones d'Intervention</a>
+      <a href="/blog" class:list={['mobile-nav-link', { active: currentPage === 'blog' }]}>Blog & Guides</a>
       <a href="/about" class:list={['mobile-nav-link', { active: currentPage === 'about' }]}>A Propos</a>
       <a href="/contact" class:list={['mobile-nav-link', { active: currentPage === 'contact' }]}>Devis & Contact</a>
       <div class="mobile-nav-call">

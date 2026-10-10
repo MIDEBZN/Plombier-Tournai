@@ -1,0 +1,286 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ReviewBadges from '../../components/ReviewBadges.astro';
+
+export async function getStaticPaths() {
+  const posts = import.meta.glob('../../content/blog/*.md', { eager: true });
+  return Object.entries(posts).map(([filepath, post]: [string, any]) => {
+    const fileSlug = filepath.split('/').pop()?.replace('.md', '');
+    const slug = post.frontmatter?.slug || fileSlug;
+    return {
+      params: { slug },
+      props: { post, slug },
+    };
+  });
+}
+
+const { post, slug } = Astro.props;
+const { Content, frontmatter } = post;
+---
+
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  canonicalPath={`/blog/${frontmatter.slug}`}
+  currentPage="blog"
+>
+  <!-- Schema.org BlogPosting -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": frontmatter.title,
+    "description": frontmatter.description,
+    "author": {
+      "@type": "Organization",
+      "name": "Plombier Tournai",
+      "url": "https://www.plombiertournai.be"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Plombier Tournai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.plombiertournai.be/logo.png"
+      }
+    },
+    "datePublished": frontmatter.date || "2026-10-10",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.plombiertournai.be/blog/${frontmatter.slug}`
+    }
+  })} />
+
+  <article class="blog-article-layout">
+    <header class="article-header">
+      <div class="container header-container">
+        <div class="breadcrumb">
+          <a href="/">Accueil</a> &rsaquo; <a href="/blog">Blog</a> &rsaquo; <span>{frontmatter.category || "Guide"}</span>
+        </div>
+        <div class="category-pill">{frontmatter.category || "Conseil Plomberie"}</div>
+        <h1 class="main-article-title">{frontmatter.title}</h1>
+        <div class="article-meta">
+          <span>Par <strong>{frontmatter.author || "Plombier Tournai"}</strong></span>
+          <span class="meta-separator">&bull;</span>
+          <span>Mis à jour en 2026</span>
+          <span class="meta-separator">&bull;</span>
+          <span>Temps de lecture : ~7 min</span>
+        </div>
+      </div>
+    </header>
+
+    <ReviewBadges />
+
+    <div class="container article-body-container">
+      <div class="article-main-column">
+        <div class="markdown-content">
+          <Content />
+        </div>
+
+        <div class="article-sticky-cta">
+          <div class="cta-box">
+            <h3>Besoin d'une intervention à Tournai ou dans ses environs ?</h3>
+            <p>Nos artisans qualifiés interviennent en urgence 24h/24 et 7j/7 ou sur rendez-vous pour tous vos dépannages, débouchages et travaux de chauffage.</p>
+            <div class="cta-buttons">
+              <a href="tel:0464780573" class="btn btn-call">Appelez le 0464 78 05 73</a>
+              <a href="/contact" class="btn btn-form">Demande de devis gratuit</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="back-to-blog">
+          <a href="/blog" class="back-link">&larr; Retour à tous les articles du blog</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .article-header {
+    background: linear-gradient(135deg, #0a306e 0%, #061c40 100%);
+    color: #ffffff;
+    padding: 50px 0 35px;
+  }
+  .header-container {
+    max-width: 860px;
+  }
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 16px;
+  }
+  .breadcrumb a {
+    color: #cbd5e1;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    color: #ffd600;
+  }
+  .category-pill {
+    display: inline-block;
+    background: rgba(255, 214, 0, 0.2);
+    color: #ffd600;
+    border: 1px solid rgba(255, 214, 0, 0.4);
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .main-article-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+  .article-meta {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .meta-separator {
+    color: #64748b;
+  }
+  .article-body-container {
+    max-width: 860px;
+    padding: 50px 20px 80px;
+  }
+  .markdown-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #1e293b;
+  }
+  .markdown-content :global(h1) {
+    display: none; /* Already rendered in header */
+  }
+  .markdown-content :global(h2) {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #0a306e;
+    margin-top: 40px;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  .markdown-content :global(h3) {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 28px;
+    margin-bottom: 12px;
+  }
+  .markdown-content :global(p) {
+    margin-bottom: 20px;
+  }
+  .markdown-content :global(ul), .markdown-content :global(ol) {
+    margin-bottom: 24px;
+    padding-left: 24px;
+  }
+  .markdown-content :global(li) {
+    margin-bottom: 8px;
+  }
+  .markdown-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .markdown-content :global(th), .markdown-content :global(td) {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .markdown-content :global(th) {
+    background: #f1f5f9;
+    color: #0a306e;
+    font-weight: 700;
+  }
+  .markdown-content :global(tr:hover) {
+    background: #f8fafc;
+  }
+  .markdown-content :global(hr) {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 40px 0;
+  }
+  .markdown-content :global(a) {
+    color: #0a306e;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  .markdown-content :global(a:hover) {
+    color: #0056b3;
+  }
+  .article-sticky-cta {
+    margin: 50px 0 30px;
+    background: #f0f7ff;
+    border: 2px solid #0a306e;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+  }
+  .cta-box h3 {
+    color: #0a306e;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  .cta-box p {
+    color: #475569;
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-call {
+    background: #ffd600;
+    color: #0a306e;
+  }
+  .btn-call:hover {
+    background: #e6c200;
+  }
+  .btn-form {
+    background: #0a306e;
+    color: #ffffff;
+  }
+  .btn-form:hover {
+    background: #061c40;
+  }
+  .back-to-blog {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+  }
+  .back-link {
+    color: #0a306e;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .back-link:hover {
+    text-decoration: underline;
+  }
+</style>
